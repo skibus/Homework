@@ -129,7 +129,6 @@ def sum_album_age():                                       # Multiply age by 2 e
         albums_age.append(age)
         i += 1
     age = sum(albums_age)
-    albums_age[:] = []
     print ('The age of all albums is: %d' % (age))
 
 
@@ -155,15 +154,15 @@ def main():
         load_music()
         print ('\n\nWelcome in the CoolMusic! Choose the action:\n')
         actions = [
-        '1) Add new album',
-        '2) Find albums by artist',
-        '3) Find albums by year',
-        '4) Find musician by album',
-        '5) Find albums by letter(s)',
-        '6) Find albums by genre',
-        '7) Calculate the age of all albums',
-        '8) Choose a random album by genre',
-        '0) Exit\n']
+            '1) Add new album',
+            '2) Find albums by artist',
+            '3) Find albums by year',
+            '4) Find musician by album',
+            '5) Find albums by letter(s)',
+            '6) Find albums by genre',
+            '7) Calculate the age of all albums',
+            '8) Choose a random album by genre',
+            '0) Exit\n']
 
         for action in actions:             # printing 1 element in actions in 1 row
             print (action)
