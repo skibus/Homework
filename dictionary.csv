@@ -1,0 +1,24 @@
+function,"A  function is a block of organized, reusable code that is used to perform a single, related action. Functions provide better modularity for your application and a high degree of code reusing.",https://www.tutorialspoint.com/python/python_functions.html
+parameter,A named entity in a function (or method) definition that specifies an argument that the function can accept., https://docs.python.org/3/glossary.html#term-parameter
+variable,Variables are nothing but reserved memory locations to store values. This means that when you create a variable you reserve some space in memory.,https://www.tutorialspoint.com/python/python_variable_types.html
+argument,A value passed to a function (or method) when calling the function.,https://docs.python.org/3/glossary.html#term-argument
+dictionary,"Python dictionary is an unordered collection of items. While other compound data types have only value as an element, a dictionary has a key: value pair. Dictionaries are optimized to retrieve values when the key is known.",https://www.programiz.com/python-programming/dictionary
+tuple,"A tuple is a sequence of immutable Python objects. Tuples are sequences, just like lists. The differences between tuples and lists are, the tuples cannot be changed unlike lists and tuples use parentheses, whereas lists use square brackets.",https://www.tutorialspoint.com/python/python_tuples.html
+ascii table,"Short for American Standard Code for Information Interexchange, ASCII is an standard that assigns letters, numbers, and other characters within the 256 slots available in the 8-bit code. The ASCII decimal (Dec) number is created from binary, which is the language of all computers.",https://www.computerhope.com/jargon/a/ascii.html
+module,"A module allows you to logically organize your Python code. Grouping related code into a module makes the code easier to understand and use. A module is a Python object with arbitrarily named attributes that you can bind and reference. Simply, a module is a file consisting of Python code. A module can define functions, classes and variables. A module can also include runnable code.",https://www.tutorialspoint.com/python/python_modules.html
+string,Strings are amongst the most popular types in Python. We can create them simply by enclosing characters in quotes. Python treats single quotes the same as double quotes.,https://www.tutorialspoint.com/python/python_strings.html
+list,"The most basic data structure in Python is the sequence. Each element of a sequence is assigned a number - its position or index. The first index is zero, the second index is one, and so forth. Python has six built-in types of sequences, but the most common ones are lists and tuples, which we would see in this tutorial. There are certain things you can do with all sequence types. These operations include indexing, slicing, adding, multiplying, and checking for membership. In addition, Python has built-in functions for finding the length of a sequence and for finding its largest and smallest elements.",https://www.tutorialspoint.com/python/python_lists.html
+number,"Number data types store numeric values. They are immutable data types, means that changing the value of a number data type results in a newly allocated object. Number objects are created when you assign a value to them.",https://www.tutorialspoint.com/python/python_numbers.html
+loop,"In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on. There may be a situation when you need to execute a block of code several number of times. Programming languages provide various control structures that allow for more complicated execution paths.
+A loop statement allows us to execute a statement or group of statements multiple times.",https://www.tutorialspoint.com/python/python_loops.html
+pep8,"PEPs are Python Enhancement Proposals, and they describe and document the way python language evolves. They also provide a reference point (and a standard) for the pythonic way to write code.",http://pragmaticcoders.com/blog/pep8-and-why-is-it-important/
+operators,Operators are the constructs which can manipulate the value of operands.,https://www.tutorialspoint.com/python/python_basic_operators.html
+,, sdfasdg
+,, asgasdg
+,, 
+,, dfhgfj
+,, psa
+,, Ty
+,, dsafsdg
+,, ksdfmhdkfsmhsd
+,, adsgsadgsadgasd
