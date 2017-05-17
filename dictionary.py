@@ -26,10 +26,10 @@ def add_definition():
     appelation = input('What appelation do u want to add? ').lower()
     explanation = input('Enter the explanation for your appelation: ')
     source = input('Enter the source: ')
-    new_definition = ', '.join([appelation, explanation, source])
-    new_def = open('dictionary.csv', 'a')
-    new_def.write(new_definition + '\n')
-    new_def.close
+    new_definition = [appelation, explanation, source]
+    with open('dictionary.csv', 'a') as f:
+        writer = csv.writer(f)
+        writer.writerow(new_definition)
     print ('\nYour appelation has been added correctly.\n')
     print (appelation + ' - ' + explanation + ' // Source: ' + source)
 
