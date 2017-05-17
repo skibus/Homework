@@ -4,10 +4,9 @@ import csv
 import time
 import os
 
-music = []
-
 
 def load_music():
+    music = []
     album_name = []
     album_info = []
     with open('music.csv', 'r') as f:
@@ -21,7 +20,7 @@ def load_music():
     return music
 
 
-def add_album():
+def add_album(music):
     album_name = []
     album_info = []
     for el in ['name of artist', 'name of the album']:
@@ -48,7 +47,7 @@ def add_album():
     return music
 
 
-def find_album_by_artist():
+def find_album_by_artist(music):
     artist = input('Enter the album\'s artist name: ').lower()
     albums = []
     for album in music:
@@ -56,12 +55,13 @@ def find_album_by_artist():
             if artist in el:
                 albums.append(album[0])
     if len(albums) != 0:
-        print ((' - '.join(albums[0])).title())
+        for el in albums:
+            print ((' - '.join(el)).title())
     else:
         print('\nThere is no album made by ' + artist + '.')
 
 
-def find_album_by_year():
+def find_album_by_year(music):
     year = input('Enter the year of realese: ')
     albums = []
     if year.isdigit():
@@ -72,14 +72,15 @@ def find_album_by_year():
                     albums.append(album[0])
 
         if len(albums) != 0:
-            print (' - '.join(albums[0]))
+            for el in albums:
+                print (' - '.join(el))
         else:
             print (('\nThere is no album made in: %s.') % (year))
     else:
         print ('Only arabic numerals available.')
 
 
-def find_musician_by_album():
+def find_musician_by_album(music):
     name = input('Enter the album name: ').lower()
     albums = []
     for album in music:
@@ -88,12 +89,13 @@ def find_musician_by_album():
                 albums.append(album[0])
 
     if len(albums) != 0:
-        print (' - '.join(albums[0]).title())
+        for el in albums:
+            print ((' - '.join(el)).title())
     else:
         print ('\nThere is no album with this name.')
 
 
-def find_album_by_letters():
+def find_album_by_letters(music):
     letters = input('Enter the letter(s) in the album\'s name: ').lower()
     albums = []
     for album in music:
@@ -101,12 +103,13 @@ def find_album_by_letters():
             albums.append(album[0])
 
     if len(albums) != 0:
-        print (' - '.join(albums[0]).title())
+        for el in albums:
+            print ((' - '.join(el)).title())
     else:
         print ('\nThere is no album with \"' + letters + '\" in the name.')
 
 
-def find_album_by_genre():
+def find_album_by_genre(music):
     genre = input('Enter the genre of the album: ').lower()
     albums = []
     for album in music:
@@ -115,12 +118,13 @@ def find_album_by_genre():
                 albums.append(album[0])
 
     if len(albums) != 0:
-        print (' - '.join(albums[0]).title())
+        for el in albums:
+            print ((' - '.join(el)).title())
     else:
         print('\nThere is no album in this genre.')
 
 
-def sum_album_age():                                       # Multiply age by 2 every time when 7 pressed (bug)
+def sum_album_age(music):                                       # Multiply age by 2 every time when 7 pressed (bug)
     i = 0
     albums_age = []
     now = datetime.datetime.now()
@@ -132,7 +136,7 @@ def sum_album_age():                                       # Multiply age by 2 e
     print ('The age of all albums is: %d' % (age))
 
 
-def random_album_by_genre():
+def random_album_by_genre(music):
     genre = input('Enter the genre of the album: ').lower()
     genre_list = []
     for album in music:
@@ -142,16 +146,15 @@ def random_album_by_genre():
 
     if len(genre_list) != 0:
         drawn = random.choice(genre_list)
-        print (' - '.join(drawn).title())
+        print ((' - '.join(drawn)).title())
     else:
         print ('\nThere is no album in this genre.')
 
 
 def main():
+    music = load_music()
     start = True
     while True:
-
-        load_music()
         print ('\n\nWelcome in the CoolMusic! Choose the action:\n')
         actions = [
             '1) Add new album',
@@ -170,35 +173,36 @@ def main():
         choose = input('What do you want to do? Choose option from 0 to 10. \n')
         if choose == '1':
             os.system('clear')
-            add_album()
+            add_album(music)
+            music = load_music()
             time.sleep(3)
         elif choose == '2':
             os.system('clear')
-            find_album_by_artist()
+            find_album_by_artist(music)
             time.sleep(2)
         elif choose == '3':
             os.system('clear')
-            find_album_by_year()
+            find_album_by_year(music)
             time.sleep(2)
         elif choose == '4':
             os.system('clear')
-            find_musician_by_album()
+            find_musician_by_album(music)
             time.sleep(2)
         elif choose == '5':
             os.system('clear')
-            find_album_by_letters()
+            find_album_by_letters(music)
             time.sleep(2)
         elif choose == '6':
             os.system('clear')
-            find_album_by_genre()
+            find_album_by_genre(music)
             time.sleep(2)
         elif choose == '7':
             os.system('clear')
-            sum_album_age()
+            sum_album_age(music)
             time.sleep(2)
         elif choose == '8':
             os.system('clear')
-            random_album_by_genre()
+            random_album_by_genre(music)
             time.sleep(2)
         elif choose == '0':
             exit()
