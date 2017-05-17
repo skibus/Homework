@@ -2,10 +2,9 @@ import csv
 import os
 import time
 
-dictionary = {}
-
 
 def load_dictionary():
+    dictionary = {}
     with open('dictionary.csv', 'r') as f:
         reader = csv.reader(f)
         for row in reader:
@@ -13,7 +12,7 @@ def load_dictionary():
     return dictionary
 
 
-def search_by_appelation():
+def search_by_appelation(dictionary):
     appelation = input('What appelation are you looking for? ').lower().strip()
     if appelation in dictionary:
         appelation = '\nSource: '.join(dictionary[appelation])
@@ -34,15 +33,15 @@ def add_definition():
     print (appelation + ' - ' + explanation + ' // Source: ' + source)
 
 
-def sort_appelations():
+def sort_appelations(dictionary):
     for key in sorted(dictionary):
         print (key)
 
 
 def main():
+    dictionary = load_dictionary()
     start = True
     while True:
-        load_dictionary()
         actions = [
             '\nDictionary for a little programmer:',
             '1) search explanation by appellation',
@@ -56,7 +55,7 @@ def main():
         choose = input('What do you want to do? Choose option from 0 to 3. \n')
         if choose == '1':
             os.system('clear')
-            search_by_appelation()
+            search_by_appelation(dictionary)
             time.sleep(3)
         elif choose == '2':
             os.system('clear')
@@ -64,7 +63,7 @@ def main():
             time.sleep(3)
         elif choose == '3':
             os.system('clear')
-            sort_appelations()
+            sort_appelations(dictionary)
             time.sleep(3)
         elif choose == '0':
             exit()
